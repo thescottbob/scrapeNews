@@ -1,0 +1,26 @@
+{
+  "name": "scrapenews",
+  "version": "1.0.0",
+  "description": "scrapeNews allows the user to view news that's been scraped from other news sites, and to comment on it in a public forum.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thescottbob/scrapeNews.git"
+  },
+  "author": "thescottbob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thescottbob/scrapeNews/issues"
+  },
+  "homepage": "https://github.com/thescottbob/scrapeNews#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.4.0"
+  }
+}
