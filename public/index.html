@@ -42,32 +42,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </head>
   <body>
+    <!-- Navbar -->
       <nav class="navbar navbar-dark bg-dark">
-          <!-- Navbar content -->
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <a class="navbar-brand" href="#">scrapeNews</a>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                  <a class="nav-item nav-link" href="#">Features</a>
-                  <a class="nav-item nav-link" href="#">Pricing</a>
-                  <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </div>
-              </div>
-
           <form class="form-inline">
-              <button class="btn btn-outline-success" type="button">Scrape New Articles</button>
-              <button class="btn btn-outline-success" type="button">Clear Saved Articles</button>
+            <!-- Title -->
+              <span class="navbar-brand mb-0 h1">scrapeNews</span>
+            <!-- Buttons to other pages and for adding/removing content from site -->
+              <button class="btn btn-outline-success" type="button">Home</button>&ensp;
+              <button class="btn btn-outline-success" type="button">Saved Articles</button>&ensp;
+              <button class="btn btn-sm btn-outline-secondary" type="button">Scrape New Articles</button>&ensp;
+              <button class="btn btn-sm btn-outline-secondary" type="button">Clear Saved Articles</button>
             </form>
         </nav>
-    <!-- <div id="wrapper">
-      <h1>Note Scraper</h1>
-      <h2><i>If you can do this...the homework should be no problem.</i></h2>
-      <div id="articles"></div>
-      <div id="notes"></div>
-    </div> -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
