@@ -8,6 +8,9 @@ var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
 
+// If deployed, use the deployed database. Otherwise use the local scrapeNews database
+var MONGODB_URI = process.env.MONGODB_URI || ("mongodb://localhost/scrapeNews", { useNewUrlParser: true });
+
 // Require all models
 var db = require("./models");
 
@@ -27,7 +30,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI);
 
 // Routes
 
