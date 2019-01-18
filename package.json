@@ -2,9 +2,9 @@
   "name": "scrapenews",
   "version": "1.0.0",
   "description": "scrapeNews allows the user to view news that's been scraped from other news sites, and to comment on it in a public forum.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,6 @@
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
-    "mongoose": "^5.4.4",
-    "morgan": "^1.9.1"
+    "mongoose": "^5.4.4"
   }
 }
