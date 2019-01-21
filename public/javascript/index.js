@@ -114,7 +114,7 @@ $(document).ready(function() {
     function handleArticleScrape() {
       // This function handles the user clicking any "scrape new article" buttons
       $.get("/api/fetch").then(function(data) {
-        // If we are able to successfully scrape the NYTIMES and compare the articles to those
+        // If we are able to successfully scrape The Washington Post and compare the articles to those
         // already in our collection, re render the articles on the page
         // and let the user know how many unique articles we were able to save
         initPage();

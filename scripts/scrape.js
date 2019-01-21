@@ -5,19 +5,19 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-// This function will scrape the NYTimes website
+// This function will scrape The Washington Post website
 var scrape = function() {
-  // Scrape the NYTimes website
-  return axios.get("http://www.nytimes.com").then(function(res) {
+  // Scrape The Washington Post website
+  return axios.get("https://www.washingtonpost.com/").then(function(res) {
     var $ = cheerio.load(res.data);
     console.log("scraping");
     // Make an empty array to save our article info
     var articles = [];
 
-    // Now, find and loop through each element that has the "css-180b3ld" class
+    // Now, find and loop through each element that has the "headline" class
     // (i.e, the section holding the articles)
-    $("div.css-1100km").each(function(i, element) {
-      // In each article section, we grab the child with the class story-heading
+    $("div.headline").each(function(i, element) {
+      // From each headline section, we grab the child element (anchor tag)
 
       // Then we grab the inner text of the this element and store it
       // to the head variable. This is the article headline
@@ -50,7 +50,7 @@ var scrape = function() {
         var dataToAdd = {
           headline: headNeat,
           summary: sumNeat,
-          url: "https://www.nytimes.com" + url
+          url: "https://www.washingtonpost.com/" + url
         };
 
         articles.push(dataToAdd);
