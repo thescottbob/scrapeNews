@@ -5,14 +5,14 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-var $ = cheerio.load(res.data);
-// Make an empty array to save our article info
-var articles = [];
-
 // This function will scrape The Washington Post website
 var scrape = function() {
   // Scrape The Washington Post website
     return axios.get("https://www.washingtonpost.com/").then(function(res) {
+
+    var $ = cheerio.load(res.data);
+    // Make an empty array to save our article info
+    var articles = [];
 
       $("div.no-skin").each(function(i, element) {
         // Grab the header of the article
