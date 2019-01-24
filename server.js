@@ -1,7 +1,7 @@
 // Dependencies
 var express = require("express");
 var mongoose = require("mongoose");
-var exphbs = require("express-handlebars");
+var exphbs = require("express-hbs");
 
 // Set up port to be either the host's designated port, or 3000
 var PORT = process.env.PORT || 3000;
@@ -20,8 +20,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect Handlebars to our Express app
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.engine("hbs", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "hbs");
 
 // Make every request go through route middleware
 app.use(routes);
@@ -31,6 +31,12 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI);
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("Connected successfully!");
+});
 
 // Listen on the port
 app.listen(PORT, function() {
