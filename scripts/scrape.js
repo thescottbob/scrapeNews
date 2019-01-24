@@ -14,7 +14,7 @@ var scrape = function() {
     // Make an empty array to save our article info
     var articles = [];
 
-      $("div.no-skin").each(function(i, element) {
+      $("div.top-table-col").each(function(i, element) {
         // Grab the header of the article
         var head = $(this)
           .find("a")
@@ -31,15 +31,25 @@ var scrape = function() {
           .text()
           .trim();
 
-          var dataToAdd = {
-            headline: head,
-            url: url,
-            summary: sum
-          }
+        // So long as our headline and sum and url aren't empty or undefined, do the following
+      if (head && sum && url) {
+        // This section uses regular expressions and the trim function to tidy our headlines and summaries
+        // We're removing extra lines, extra spacing, extra tabs, etc.. to increase to typographical cleanliness.
+        var headNeat = head.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
+        var sumNeat = sum.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
+
+        // Initialize an object we will push to the articles array
+
+        var dataToAdd = {
+          headline: headNeat,
+          summary: sumNeat,
+          url: "https://www.washingtonpost.com/" + url
+        };
 
         articles.push(dataToAdd);
-        return articles;
-      })
+      }
+    });
+    return articles;
   });
 };
 
