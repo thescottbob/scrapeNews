@@ -5,7 +5,7 @@
 var axios = require("axios");
 var cheerio = require("cheerio");
 
-// This function will scrape The Washington Post website
+// This function will scrape Hacker News website
 var scrape = function() {
   // Scrape website
     return axios.get("https://news.ycombinator.com/").then(function(res) {
