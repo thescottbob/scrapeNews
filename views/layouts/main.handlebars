@@ -12,8 +12,9 @@
 
 <body>
   {{{ body }}}
-  <script src="/public/javascript/index.js"></script>
-  <script src="/public/javascript/saved.js"></script>
+  {{#each js}}
+        <script src="/javascript/{{this}}"></script>
+    {{/each}}
 </body>
 
 </html>
