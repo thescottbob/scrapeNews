@@ -3,6 +3,9 @@ var express = require("express");
 var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
 
+const Hapi = require('hapi');
+const server = Hapi.server({ host: 'localhost', port: 3000 });
+
 // Set up port to be either the host's designated port, or 3000
 var PORT = process.env.PORT || 3000;
 
@@ -45,7 +48,7 @@ app.listen(PORT, function() {
 
 server.route({
   method: 'GET',
-  path: '/javascript/index.js',
+  path: '/javascript/index.js*}',
   handler: {
     directory: {
       path:    __dirname + '/public',
