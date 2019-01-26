@@ -1,5 +1,5 @@
 // Dependencies
-require('dotenv').config();
+var env = require('dotenv').config();
 var express = require("express");
 var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");
@@ -29,13 +29,6 @@ app.use(routes);
 
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-
-const db = require('db')
-db.connect({
-  host: process.env.DB_HOST,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASS
-})
 
 // Connect to the Mongo DB
 mongoose.connect(MONGODB_URI);
