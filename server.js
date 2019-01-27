@@ -1,5 +1,5 @@
 // Dependencies
-var env = require('dotenv').config();
+require('dotenv').config();
 var express = require("express");
 var mongoose = require("mongoose");
 var exphbs = require("express-handlebars");

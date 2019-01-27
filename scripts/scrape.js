@@ -46,8 +46,7 @@ var scrape = function() {
 
         var dataToAdd = {
           headline: headNeat,
-          url: "https://news.ycombinator.com/" + url,
-          // summary: sumNeat,
+          url: url,
         };
 
         articles.push(dataToAdd);

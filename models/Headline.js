@@ -15,11 +15,6 @@ var headlineSchema = new Schema({
     required: true,
     unique: { index: { unique: true } }
   },
-  // summary, a string, must be entered
-  summary: {
-    type: String,
-    required: true
-  },
   // url, a string, must be entered
   url: {
     type: String,
