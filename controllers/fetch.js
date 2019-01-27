@@ -13,6 +13,7 @@ module.exports = {
       })
       .then(function(dbHeadline) {
         if (dbHeadline.length === 0) {
+          console.log("No new articles today. Check back tomorrow!")
           res.json({
             message: "No new articles today. Check back tomorrow!"
           });
